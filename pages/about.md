@@ -3,7 +3,7 @@ layout: page
 title: About
 permalink: /about/
 ---
-I'm Vivek Guthikonda. This is my webpage and below is my resume.
+I'm Vivek Guthikonda, AI Enthusiast and Practitioner. This is my webpage and below is my resume.
 
-![resume.jpg]
+![image](resume.jpg)
  
