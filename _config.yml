@@ -1,5 +1,5 @@
 # SITE CONFIGURATION
-baseurl: /
+baseurl: "/"
 url: "https://vivekguthikonda.github.io/"
 
 # THEME-SPECIFIC CONFIGURATION
