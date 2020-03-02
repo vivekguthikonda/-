@@ -1,5 +1,6 @@
 ---
 published: true
+publish: true
 ---
 ## Movie Plot Synopsis Tagging
 
