@@ -110,8 +110,8 @@ The link to the notebook of this case study at github: [here](https://github.com
 
 #### References:
 
-- https://www.aclweb.org/anthology/L18-1274
-- https://www.appliedaicourse.com
+- www.aclweb.org/anthology/L18-1274
+- www.appliedaicourse.com
 
 
 
