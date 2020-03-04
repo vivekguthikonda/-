@@ -25,12 +25,11 @@ katex: true                                             # Enable if using math m
 google_analytics:                                       # Tracking ID, e.g. "UA-000000-01"
 disqus_shortname: vivekguthikonda-github-io                                       # Your discus shortname for comments
 layout_variables:                                       # Open the "_sass > base" folder, and open "_variables.scss"
-footer_icons: >
-   linkedin: https://www.linkedin.com/in/vivek-guthikonda-a08074173?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B05aS2ONSS4yA1bu6oSKUfA%3D%3D
- # In _data/social.yml
+footer_icons:                                           # In _data/social.yml
 share_buttons:                                          # In _data/social.yml
 authors:                                                # In _data/authors.yml
 language:                                               # In _data/language.ym
+linkedin: https://www.linkedin.com/in/vivek-guthikonda-a08074173?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B05aS2ONSS4yA1bu6oSKUfA%3D%3D
 
 # PAGINATION
 paginate: 5
