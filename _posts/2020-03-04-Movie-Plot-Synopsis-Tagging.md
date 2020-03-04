@@ -111,7 +111,7 @@ The link to the notebook of this case study at github: [here](https://github.com
 #### References:
 
 - [www.aclweb.org/anthology/L18-1274](www.aclweb.org/anthology/L18-1274)
-- [www.aclweb.org/anthology/L18-1274](www.appliedaicourse.com)
+- [www.appliedaicourse.com](www.appliedaicourse.com)
 
 
 
