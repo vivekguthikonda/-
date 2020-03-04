@@ -90,9 +90,9 @@ NOTE: set class_weight = 'balanced' for models where ever available in libraries
 
 #### Comparing all models:
 
-![71tags]({{ "/assets/img/mpst/71tags.png" | relative_url}})
+![71tags]({{ "/assets/img/mpst/71tags.jpg" | relative_url}})
 
-![34tags]({{ "/assets/img/mpst/34tags.png" | relative_url}})
+![34tags]({{ "/assets/img/mpst/34tags.jpg" | relative_url}})
 
 #### Epilogue:
 
