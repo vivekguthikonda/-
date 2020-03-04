@@ -82,7 +82,7 @@ NOTE: set class_weight = 'balanced' for models where ever available in libraries
 
 - All features are MinMax Normalized before training.
 
-###### Training the models:
+##### Training the models:
 - We train models using sentiment features and taking one of above text featurizations seperately for each model.
 - We also train models using mix of all above featurizations.
 - We hyperparameter tune the models with randomsearch. 
