@@ -12,7 +12,6 @@ favicon: assets/favicon.ico                        # Icon displayed in the tab
 header_text: AI Case Studies # Change Blog header text
 header_feature_image: assets/img/pexels/triangular.jpeg
 footer_text: > 
-  linkedin: https://www.linkedin.com/in/vivek-guthikonda-a08074173
   
 # Blog
 excerpt: true                                           # Or "truncate" (first 250 characters), "false" to disable
@@ -28,6 +27,7 @@ footer_icons:                                           # In _data/social.yml
 share_buttons:                                          # In _data/social.yml
 authors:                                                # In _data/authors.yml
 language:                                               # In _data/language.yml
+linkedin: https://www.linkedin.com/in/vivek-guthikonda-a08074173
 
 # PAGINATION
 paginate: 5
