@@ -1,5 +1,6 @@
 ---
 published: true
 ---
-## A New Post
-Sample
+![](image.jpg)
+
+
