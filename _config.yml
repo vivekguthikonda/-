@@ -11,7 +11,7 @@ favicon: assets/favicon.ico                        # Icon displayed in the tab
 # Header and footer text
 header_text: AI Case Studies # Change Blog header text
 header_feature_image: assets/img/pexels/triangular.jpeg
-footer_text: > linkedin: vivek-guthikonda-a08074173
+footer_text: > linkedin: https://www.linkedin.com/in/vivek-guthikonda-a08074173?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Be4n4zn8fQPeLhK78Wcyxyw%3D%3D
 # Blog
 excerpt: true                                           # Or "truncate" (first 250 characters), "false" to disable
 post_navigation: true
