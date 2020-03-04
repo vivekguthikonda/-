@@ -44,6 +44,8 @@ First, we have to check for any NaN or null entries and remove the duplicate row
 
 ##### Distrubution of Tags:
 
+By looking at the plot, we can say that data is very imbalanced.
+
 ![tag_dist]({{ "/assets/img/mpst/tag_dist.png" | relative_url}})
 
 ##### WordCloud of Most Frequent Tags:
@@ -53,12 +55,37 @@ First, we have to check for any NaN or null entries and remove the duplicate row
 ##### Preprocessing the plot_synopses:
 - Remove name tags like Dr., Mr., Mrs., Miss, Master, etc.
 - Remove stopwords.
-- Remove Special Characters.
-- Stem all the words.
+- Remove special characters.
+- Stem all the words using krovetzstemmer.
 - Replace all person names as 'person'.
 - Convert every word to lowercase.
 
-While preprocessing itself, we find the sentiment features using sentic.SenticPhrase library which include: 14 mood tags features ['#interest', '#admiration', '#sadness', '#disgust', '#joy', '#anger', '#fear', '#surprise'] and 3 basic sentiments like negative, neutral, positive intensity features from SentimentIntensityAnalyzer in nltk.sentiment.vader library.
+- While preprocessing itself, we find the sentiment features using sentic.SenticPhrase library which include: 14 mood tags features like ['#interest', '#admiration', '#sadness', '#disgust', '#joy', '#anger', '#fear', '#surprise'] and 3 basic sentiments like negative, neutral, positive intensity features from SentimentIntensityAnalyzer in nltk.sentiment.vader library.
+
+### Machine Learning Models:
+
+We define various machine learning models like LogisticRegression, LinearSVM, Complement Naive Bayes(As it known for handling unbalanced numerical count features) inside of OneVsRestClassifier which trains a specified model for every label present in tagset.
+
+NOTE: set class_weight = 'balanced' for models where ever available in libraries.
+
+##### Text Featurization:
+- All features are extracted using scikit-learn libraries.
+- BoW (Bag Of Words) features: we use max_features = 25000 (found this optimal value which works better with 71 tags) and ngram_range = (1,5).
+
+- Tfidf features: we use min_df = 5 (min. document frequency for a word), sublinear_tf = True (option which normalizes the features), max_features = 25000 and ngram_range = (1,5).
+
+- pretrained-Glove word2vec features (300dim) and tfidf weighted word2vec features.
+
+- All features are MinMax Normalized before training.
+
+###### Training the models:
+- We train models using sentiment features and taking one of above text featurizations seperately for each model.
+- We also train models using mix of all above featurizations.
+- We hyperparameter tune the models with randomsearch. 
+
+
+
+
 
 
 
