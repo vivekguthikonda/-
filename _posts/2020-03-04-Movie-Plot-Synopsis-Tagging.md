@@ -11,7 +11,7 @@ In this case study, we are using MPST dataset of 14k movie plot synopses which h
 
 ### Problem Statement:
 
-Suggest the tags based on the plot synopses of the given movies.
+Suggest the tags based on the plot synopses of movies given.
 
 ### Dataset:
 
@@ -105,6 +105,7 @@ The best performance is shown by LogisticRegression with all w2v, bow and tfidf 
 The performance of Top3 Tags LR model is **0.6102** f1-micro.
 
 The performance of Top4 Tags LR model is **0.5874** f1-micro.
+
 
 
 
