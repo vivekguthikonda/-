@@ -41,8 +41,12 @@ Micro-Averaged F1-Score (Mean F Score) : The F1 score can be interpreted as a we
 
 ### Exploratory Data Analysis:
 First, we have to check for any NaN or null entries and remove the duplicate rows.
+##### Preprocessing tags:
+- We split the tags at ',' and remove the commas.
+- Replace spaces between each tag with '_'.
+- Encode tags using one hot encoding.
 
-##### Distrubution of Tags:
+##### Distribution of Tags:
 
 By looking at the plot, we can say that data is very imbalanced.
 
@@ -74,7 +78,7 @@ NOTE: set class_weight = 'balanced' for models where ever available in libraries
 
 - Tfidf features: we use min_df = 5 (min. document frequency for a word), sublinear_tf = True (option which normalizes the features), max_features = 25000 and ngram_range = (1,5).
 
-- pretrained-Glove word2vec features (300dim) and tfidf weighted word2vec features.
+- pretrained-Glove average word2vec features (300dim) and tfidf weighted word2vec features.
 
 - All features are MinMax Normalized before training.
 
@@ -82,6 +86,30 @@ NOTE: set class_weight = 'balanced' for models where ever available in libraries
 - We train models using sentiment features and taking one of above text featurizations seperately for each model.
 - We also train models using mix of all above featurizations.
 - We hyperparameter tune the models with randomsearch. 
+- Also train the models with Top3 and Top4 tags as Movie databases show mostly 3 or 4 tags with movie.
+
+#### Comparing all models:
+
+![71tags]({{ "/assets/img/mpst/71tags.png" | relative_url}})
+
+![34tags]({{ "/assets/img/mpst/34tags.png" | relative_url}})
+
+#### Epilogue:
+
+We have used MPST dataset which has 14,828 plot synopses and with 71 tagset. We have proprocessed tags and plot_synopses extracting useful features. We have analysed various machine learning models trained upon those features. 
+
+The best performance is shown by LogisticRegression with all w2v, bow and tfidf features together giving **0.4101** f1-micro for 71 tags.
+
+The performance of Top3 Tags LR model is **0.6102** f1-micro.
+
+The performance of Top4 Tags LR model is **0.5874** f1-micro.
+
+
+
+
+
+
+
 
 
 
