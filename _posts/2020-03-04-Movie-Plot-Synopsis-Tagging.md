@@ -1,7 +1,7 @@
 ---
 published: true
 ---
-![intro]({{ "/assets/img/mpst/image.jpeg" | relative_url}})
+![intro]({{ "/assets/img/mpst/image.jpg" | relative_url}})
 
 ### Intoduction:
 
