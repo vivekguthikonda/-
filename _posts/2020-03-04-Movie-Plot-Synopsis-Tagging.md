@@ -41,9 +41,26 @@ Micro-Averaged F1-Score (Mean F Score) : The F1 score can be interpreted as a we
 
 ### Exploratory Data Analysis:
 First, we have to check for any NaN or null entries and remove the duplicate rows.
+
 ##### Distrubution of Tags:
 
-![tag_dist]({{ "/assets/img/mpst/tag_dist.jpg" | relative_url}})
+![tag_dist]({{ "/assets/img/mpst/tag_dist.png" | relative_url}})
+
+##### WordCloud of Most Frequent Tags:
+
+![wordcloud]({{ "/assets/img/mpst/wordcloud.png" | relative_url}})
+
+##### Preprocessing the plot_synopses:
+- Remove name tags like Dr., Mr., Mrs., Miss, Master, etc.
+- Remove stopwords.
+- Remove Special Characters.
+- Stem all the words.
+- Replace all person names as 'person'.
+- Convert every word to lowercase.
+
+While preprocessing itself, we find the sentiment features using sentic.SenticPhrase library which include: 14 mood tags features ['#interest', '#admiration', '#sadness', '#disgust', '#joy', '#anger', '#fear', '#surprise'] and 3 basic sentiments like negative, neutral, positive intensity features from SentimentIntensityAnalyzer in nltk.sentiment.vader library.
+
+
 
 
 
