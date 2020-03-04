@@ -90,8 +90,10 @@ NOTE: set class_weight = 'balanced' for models where ever available in libraries
 
 #### Comparing all models:
 
+##### On 71 tags:
 ![71tags]({{ "/assets/img/mpst/71tags.jpg" | relative_url}})
 
+##### On Top3 and Top4 tags:
 ![34tags]({{ "/assets/img/mpst/34tags.jpg" | relative_url}})
 
 #### Epilogue:
