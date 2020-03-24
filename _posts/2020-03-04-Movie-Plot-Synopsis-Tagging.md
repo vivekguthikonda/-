@@ -127,7 +127,7 @@ For the data to be ready for training, we need to encode numericals to one hot v
 
 ##### Train-Test split:
 
-For the validating our models, we train them on train split and validate them using test split.
+Here we merge train and val splits into train split to get  more data. For the validating our models, we will be using test split as it is provided with labels.
 
 ![split]({{ "/assets/img/mpst/train_test.jpg" | relative_url}})
 
