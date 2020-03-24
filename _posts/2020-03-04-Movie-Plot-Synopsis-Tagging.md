@@ -184,12 +184,9 @@ NOTE: set class_weight = 'balanced' for models where ever available in libraries
 
 ### Epilogue:
 
-We have used MPST dataset which has 14,828 plot synopses and with 71 tagset. We have proprocessed tags and plot_synopses extracting useful features. We have analysed various machine learning models trained upon those features. 
-
-The best performance is shown by LogisticRegression with all w2v, bow and tfidf features together giving **0.4101** f1-micro for 71 tags.
+We have used MPST dataset which has 14,828 plot synopses and with 71 tagset. We have proprocessed tags and plot_synopses extracting useful features. We have analysed various machine learning models trained upon those features. The best performance is shown by LogisticRegression with all w2v, bow and tfidf features together giving **0.4101** f1-micro for 71 tags.
 
 The performance of Top3 Tags LR model is **0.6102** f1-micro.
-
 The performance of Top4 Tags LR model is **0.5874** f1-micro.
 
 The link to the notebook of this case study at github: [here](https://github.com/vivekguthikonda/MPST/blob/master/MPST.ipynb)
