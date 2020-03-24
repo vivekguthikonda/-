@@ -189,8 +189,6 @@ NOTE: set class_weight = 'balanced' for models where ever available in libraries
 
 ### Epilogue:
 
-- we have covered many of the Machine learning technique in classifying the text data. 
-
 We have used MPST dataset which has 14,828 plot synopses and with 71 tagset. We have proprocessed tags and plot_synopses extracting useful features. We have analysed various machine learning models trained upon those features. 
 
 The best performance is shown by LogisticRegression with all w2v, bow and tfidf features together giving **0.4101** f1-micro for 71 tags.
