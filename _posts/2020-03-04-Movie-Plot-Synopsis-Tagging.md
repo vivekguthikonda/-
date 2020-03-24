@@ -108,15 +108,15 @@ By looking at the plot, we can say that data is very imbalanced.
 - Replace all person names as 'person'.
 - Convert every word to lowercase.
 
-![pre11]({{ "/assets/img/mpst/preprocessing11.jpg" | relative_url}})
-
 ![pre2]({{ "/assets/img/mpst/preprocessing2.jpg" | relative_url}})
 
-- While preprocessing itself, we find the sentiment features using sentic.SenticPhrase library which include: 14 mood tags features like ['#interest', '#admiration', '#sadness', '#disgust', '#joy', '#anger', '#fear', '#surprise'] and 3 basic sentiments like negative, neutral, positive intensity features from SentimentIntensityAnalyzer in nltk.sentiment.vader library.
+- We find the sentiment features using sentic.SenticPhrase library which include: 14 mood tags features like ['#interest', '#admiration', '#sadness', '#disgust', '#joy', '#anger', '#fear', '#surprise'] and 3 basic sentiments like negative, neutral, positive intensity features from SentimentIntensityAnalyzer in nltk.sentiment.vader library.
+
+![pre3]({{ "/assets/img/mpst/preprocessing3.jpg" | relative_url}})
 
 - Stem all the words using krovetzstemmer.
 
-![pre3]({{ "/assets/img/mpst/preprocessing3.jpg" | relative_url}})
+![pre4]({{ "/assets/img/mpst/preprocessing4.jpg" | relative_url}})
 
 ### Data Preparation:
 
