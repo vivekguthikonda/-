@@ -39,32 +39,105 @@ Micro-Averaged F1-Score (Mean F Score) : The F1 score can be interpreted as a we
 ![mar]({{ "/assets/img/mpst/mar.jpg" | relative_url}})
 ![maf]({{ "/assets/img/mpst/maf.jpg" | relative_url}})
 
-### Exploratory Data Analysis:
-First, we have to check for any NaN or null entries and remove the duplicate rows.
+### Data Cleaning:
+Any dataset at first will contain many nan or null entries and duplicate items. So, we will remove them now.
+
+##### Checking for NaN or null entries:
+![nan]({{ "/assets/img/mpst/checking_nan.jpg" | relative_url}})
+So, the dataset has no null/NaN entries.
+
+##### Checking for duplicates:
+![dup]({{ "/assets/img/mpst/duplicates.jpg" | relative_url}})
+
+Let's see what are those duplicate rows!
+![dup_head]({{ "/assets/img/mpst/duplicate_head.jpg" | relative_url}})
+
+Now, lets see how those rows are duplicated.
+![dup_1]({{ "/assets/img/mpst/duplicate1.jpg" | relative_url}})
+
+The Titles appeared to same but the plot and tags are different. So its time to check plot synopsis duplication.
+
+![dup_2]({{ "/assets/img/mpst/duplicate2.jpg" | relative_url}})
+
+Now, we have to remove the duplicate rows which have both 'title' and 'plot_synopsis' as same.
+
+![dup_3]({{ "/assets/img/mpst/duplicate3.jpg" | relative_url}})
+
+Thats it. We have done data cleaning of the dataset.
+
 ##### Preprocessing tags:
 - We split the tags at ',' and remove the commas.
 - Replace spaces between each tag with '_'.
 - Encode tags using one hot encoding.
 
+![tagpp]({{ "/assets/img/mpst/tag_pp.jpg" | relative_url}})
+
+### Exploratory Data Analysis:
+
+To get the clarity on the distribution of the dataset, we have to plot the data using visualization tools available.
+
 ##### Distribution of Tags:
 
-By looking at the plot, we can say that data is very imbalanced.
+Lets plot the distribution of tags using barplot from seaborn library.
+![tag_code]({{ "/assets/img/mpst/tag_code.jpg" | relative_url}})
 
-![tag_dist]({{ "/assets/img/mpst/tag_dist.png" | relative_url}})
+and the output is:
+
+![tag_dist]({{ "/assets/img/mpst/tag_dist.jpg" | relative_url}})
+
+By looking at the plot, we can say that data is very imbalanced.
 
 ##### WordCloud of Most Frequent Tags:
 
 ![wordcloud]({{ "/assets/img/mpst/wordcloud.png" | relative_url}})
 
 ##### Preprocessing the plot_synopses:
+
 - Remove name tags like Dr., Mr., Mrs., Miss, Master, etc.
 - Remove stopwords.
 - Remove special characters.
+
+![pre1]({{ "/assets/img/mpst/preprocessing1.jpg" | relative_url}})
+
 - Stem all the words using krovetzstemmer.
 - Replace all person names as 'person'.
 - Convert every word to lowercase.
 
+![pre2]({{ "/assets/img/mpst/preprocessing2.jpg" | relative_url}})
+
+
 - While preprocessing itself, we find the sentiment features using sentic.SenticPhrase library which include: 14 mood tags features like ['#interest', '#admiration', '#sadness', '#disgust', '#joy', '#anger', '#fear', '#surprise'] and 3 basic sentiments like negative, neutral, positive intensity features from SentimentIntensityAnalyzer in nltk.sentiment.vader library.
+
+![pre3]({{ "/assets/img/mpst/preprocessing3.jpg" | relative_url}})
+
+### Data Preparation:
+
+For the data to be ready for training, we need to encode numericals to one hot vectors and drop the unneccesary columns like 'title' and 'imdb_id'.
+
+![dp]({{ "/assets/img/mpst/data_prep.jpg" | relative_url}})
+
+##### Train-Test split:
+
+For the validating our models, we train them on train split and validate them using test split.
+
+![split]({{ "/assets/img/mpst/train_test.jpg" | relative_url}})
+
+##### Text Featurization:
+
+- All features are extracted using scikit-learn libraries and MinMax Normalized before training.
+
+- BoW (Bag Of Words) features: we use max_features = 25000 (found this optimal value which works better with 71 tags) and ngram_range = (1,5).
+
+![bow]({{ "/assets/img/mpst/bow.jpg" | relative_url}})
+
+- Tfidf features: we use min_df = 5 (min. document frequency for a word), sublinear_tf = True (option which normalizes the features), max_features = 25000 and ngram_range = (1,5).
+
+![tfidf]({{ "/assets/img/mpst/tfidf.jpg" | relative_url}})
+
+- pretrained-Glove average word2vec features (300dim) and tfidf weighted word2vec features.
+
+![w2v]({{ "/assets/img/mpst/w2v.jpg" | relative_url}})
+
 
 ### Machine Learning Models:
 
@@ -72,16 +145,8 @@ We define various machine learning models like LogisticRegression, LinearSVM, Co
 
 NOTE: set class_weight = 'balanced' for models where ever available in libraries.
 
-##### Text Featurization:
-- All features are extracted using scikit-learn libraries.
-- BoW (Bag Of Words) features: we use max_features = 25000 (found this optimal value which works better with 71 tags) and ngram_range = (1,5).
-
-- Tfidf features: we use min_df = 5 (min. document frequency for a word), sublinear_tf = True (option which normalizes the features), max_features = 25000 and ngram_range = (1,5).
-
-- pretrained-Glove average word2vec features (300dim) and tfidf weighted word2vec features.
-
-- All features are MinMax Normalized before training.
-
+![lr]({{ "/assets/img/mpst/lrmodel.jpg" | relative_url}})
+LogisticRegression Model
 ##### Training the models:
 - We train models using sentiment features and taking one of above text featurizations seperately for each model.
 - We also train models using mix of all above featurizations.
@@ -112,43 +177,3 @@ The link to the notebook of this case study at github: [here](https://github.com
 
 - [www.aclweb.org/anthology/L18-1274](www.aclweb.org/anthology/L18-1274)
 - [www.appliedaicourse.com](www.appliedaicourse.com)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
