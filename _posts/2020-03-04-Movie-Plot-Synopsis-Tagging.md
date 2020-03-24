@@ -103,10 +103,14 @@ By looking at the plot, we can say that data is very imbalanced.
 - Remove stopwords.
 - Remove special characters.
 - Stem all the words using krovetzstemmer.
+
+
+![pre1]({{ "/assets/img/mpst/preprocessing1.jpg" | relative_url}})
+
 - Replace all person names as 'person'.
 - Convert every word to lowercase.
 
-![pre1]({{ "/assets/img/mpst/preprocessing1.jpg" | relative_url}})
+![pre11]({{ "/assets/img/mpst/preprocessing11.jpg" | relative_url}})
 
 ![pre2]({{ "/assets/img/mpst/preprocessing2.jpg" | relative_url}})
 
