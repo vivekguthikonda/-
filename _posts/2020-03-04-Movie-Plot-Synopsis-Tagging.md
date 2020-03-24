@@ -193,7 +193,7 @@ The performance of Top3 Tags LR model is **0.6102** f1-micro.
 The performance of Top4 Tags LR model is **0.5874** f1-micro.
 
 The link to the notebook of this case study at github: [here](https://github.com/vivekguthikonda/MPST/blob/master/MPST.ipynb)
-
+My linkedin profile : [here](https://www.linkedin.com/in/vivek-guthikonda-a08074173?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Buzmi4oz%2BSeaFV8F0MiWfVA%3D%3D)
 
 #### References:
 
