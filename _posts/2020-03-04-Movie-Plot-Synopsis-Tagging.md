@@ -83,7 +83,7 @@ Lets plot the distribution of tags using barplot from seaborn library.
 
 and the output is:
 
-![tag_dist]({{ "/assets/img/mpst/tag_dist.jpg" | relative_url}})
+![tag_dist]({{ "/assets/img/mpst/tag_dist.png" | relative_url}})
 
 By looking at the plot, we can say that data is very imbalanced.
 
