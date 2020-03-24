@@ -40,6 +40,7 @@ Micro-Averaged F1-Score (Mean F Score) : The F1 score can be interpreted as a we
 ![maf]({{ "/assets/img/mpst/maf.jpg" | relative_url}})
 
 ### Data Cleaning:
+
 Any dataset at first will contain many nan or null entries and duplicate items. So, we will remove them now.
 
 ##### Checking for NaN or null entries:
@@ -50,9 +51,11 @@ So, the dataset has no null/NaN entries.
 ![dup]({{ "/assets/img/mpst/duplicates.jpg" | relative_url}})
 
 Let's see what are those duplicate rows!
+
 ![dup_head]({{ "/assets/img/mpst/duplicate_head.jpg" | relative_url}})
 
 Now, lets see how those rows are duplicated.
+
 ![dup_1]({{ "/assets/img/mpst/duplicate1.jpg" | relative_url}})
 
 The Titles appeared to same but the plot and tags are different. So its time to check plot synopsis duplication.
@@ -79,6 +82,7 @@ To get the clarity on the distribution of the dataset, we have to plot the data 
 ##### Distribution of Tags:
 
 Lets plot the distribution of tags using barplot from seaborn library.
+
 ![tag_code]({{ "/assets/img/mpst/tag_code.jpg" | relative_url}})
 
 and the output is:
@@ -147,6 +151,7 @@ For the validating our models, we train them on train split and validate them us
 We define various machine learning models like LogisticRegression, LinearSVM, Complement Naive Bayes(As it known for handling unbalanced numerical count features) inside of OneVsRestClassifier which trains a specified model for every label present in tagset.
 
 NOTE: set class_weight = 'balanced' for models where ever available in libraries.
+
 ![lr]({{ "/assets/img/mpst/lrmodel.jpg" | relative_url}})
 *Image: Logistic Regression (Tfidf features)*
 
@@ -163,9 +168,11 @@ NOTE: set class_weight = 'balanced' for models where ever available in libraries
 #### Comparing all models:
 
 ##### On 71 tags:
+
 ![71tags]({{ "/assets/img/mpst/71tags.jpg" | relative_url}})
 
 ##### On Top3 and Top4 tags:
+
 ![34tags]({{ "/assets/img/mpst/34tags.jpg" | relative_url}})
 
 #### Future Work:
