@@ -58,7 +58,7 @@ Now, lets see how those rows are duplicated.
 
 ![dup_1]({{ "/assets/img/mpst/duplicate1.jpg" | relative_url}})
 
-The Titles appeared to same but the plot and tags are different. So its time to check plot synopsis duplication.
+The titles appeared to be same but the plot and tags are different. So its time to check plot synopsis duplication.
 
 ![dup_2]({{ "/assets/img/mpst/duplicate2.jpg" | relative_url}})
 
