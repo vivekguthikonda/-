@@ -69,7 +69,7 @@ Now, we have to remove the duplicate rows which have both 'title' and 'plot_syno
 Thats it. We have done data cleaning of the dataset.
 
 ##### Preprocessing tags:
-- We split the tags at ',' and remove the commas.
+- We split the tags at whitespace and remove the commas.
 - Replace spaces between each tag with '_'.
 - Encode tags using one hot encoding.
 
