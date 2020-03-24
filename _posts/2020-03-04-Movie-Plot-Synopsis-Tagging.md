@@ -100,12 +100,11 @@ By looking at the plot, we can say that data is very imbalanced.
 - Remove name tags like Dr., Mr., Mrs., Miss, Master, etc.
 - Remove stopwords.
 - Remove special characters.
-
-![pre1]({{ "/assets/img/mpst/preprocessing1.jpg" | relative_url}})
-
 - Stem all the words using krovetzstemmer.
 - Replace all person names as 'person'.
 - Convert every word to lowercase.
+
+![pre1]({{ "/assets/img/mpst/preprocessing1.jpg" | relative_url}})
 
 ![pre2]({{ "/assets/img/mpst/preprocessing2.jpg" | relative_url}})
 
