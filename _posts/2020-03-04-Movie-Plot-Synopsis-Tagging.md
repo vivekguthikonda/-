@@ -129,14 +129,17 @@ For the validating our models, we train them on train split and validate them us
 - BoW (Bag Of Words) features: we use max_features = 25000 (found this optimal value which works better with 71 tags) and ngram_range = (1,5).
 
 ![bow]({{ "/assets/img/mpst/bow.jpg" | relative_url}})
+*Image: Bag of words*
 
 - Tfidf features: we use min_df = 5 (min. document frequency for a word), sublinear_tf = True (option which normalizes the features), max_features = 25000 and ngram_range = (1,5).
 
 ![tfidf]({{ "/assets/img/mpst/tfidf.jpg" | relative_url}})
+*Image: Tfidf*
 
 - pretrained-Glove average word2vec features (300dim) and tfidf weighted word2vec features.
 
 ![w2v]({{ "/assets/img/mpst/w2v.jpg" | relative_url}})
+*Image: Glove avg-w2v*
 
 
 ### Machine Learning Models:
@@ -144,14 +147,18 @@ For the validating our models, we train them on train split and validate them us
 We define various machine learning models like LogisticRegression, LinearSVM, Complement Naive Bayes(As it known for handling unbalanced numerical count features) inside of OneVsRestClassifier which trains a specified model for every label present in tagset.
 
 NOTE: set class_weight = 'balanced' for models where ever available in libraries.
-
 ![lr]({{ "/assets/img/mpst/lrmodel.jpg" | relative_url}})
-LogisticRegression Model
+*Image: Logistic Regression (Tfidf features)*
+
 ##### Training the models:
 - We train models using sentiment features and taking one of above text featurizations seperately for each model.
 - We also train models using mix of all above featurizations.
-- We hyperparameter tune the models with randomsearch. 
+- I have tuned the parameters manually so that I can test wide range of parameters by hand.
 - Also train the models with Top3 and Top4 tags as Movie databases show mostly 3 or 4 tags with movie.
+
+![lr]({{ "/assets/img/mpst/lrmodel.jpg" | relative_url}})
+*Image: Logistic Regression (Mixed Features)*
+
 
 #### Comparing all models:
 
@@ -161,7 +168,17 @@ LogisticRegression Model
 ##### On Top3 and Top4 tags:
 ![34tags]({{ "/assets/img/mpst/34tags.jpg" | relative_url}})
 
+#### Future Work:
+
+- As future work, we can engineer more features from text (if possible) and try to increase the micro-f1 score.
+
+- As the text preprocessing plays an important role in getting rich features, we can play with different techniques available in internet to extract more performance from models.
+
+- I have also tested the models with embeddings of the plot_synopsis obtained from pretrained Deep learning models like BERT(786d), Elmo (1024d), etc. but the dimensionality of those vectors is not sufficient to classify this 71 tags tagset. If possible, we can try to optimize to those features for more score.
+
 #### Epilogue:
+
+- we have covered many of the Machine learning technique in classifying the text data. 
 
 We have used MPST dataset which has 14,828 plot synopses and with 71 tagset. We have proprocessed tags and plot_synopses extracting useful features. We have analysed various machine learning models trained upon those features. 
 
@@ -172,6 +189,7 @@ The performance of Top3 Tags LR model is **0.6102** f1-micro.
 The performance of Top4 Tags LR model is **0.5874** f1-micro.
 
 The link to the notebook of this case study at github: [here](https://github.com/vivekguthikonda/MPST/blob/master/MPST.ipynb)
+
 
 #### References:
 
