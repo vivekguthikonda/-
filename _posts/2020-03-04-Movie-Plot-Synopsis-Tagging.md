@@ -137,19 +137,16 @@ For the validating our models, we train them on train split and validate them us
 - BoW (Bag Of Words) features: we use max_features = 25000 (found this optimal value which works better with 71 tags) and ngram_range = (1,5).
 
 ![bow]({{ "/assets/img/mpst/bow.jpg" | relative_url}})
-{:.image-caption}
 *Image: Bag of words*
 
 - Tfidf features: we use min_df = 5 (min. document frequency for a word), sublinear_tf = True (option which normalizes the features), max_features = 25000 and ngram_range = (1,5).
 
 ![tfidf]({{ "/assets/img/mpst/tfidf.jpg" | relative_url}})
-{:.image-caption}
 *Image: Tfidf*
 
 - pretrained-Glove average word2vec features (300dim) and tfidf weighted word2vec features.
 
 ![w2v]({{ "/assets/img/mpst/w2v.jpg" | relative_url}})
-{:.image-caption}
 *Image: Glove avg-w2v*
 
 
@@ -160,7 +157,6 @@ We define various machine learning models like LogisticRegression, LinearSVM, Co
 NOTE: set class_weight = 'balanced' for models where ever available in libraries.
 
 ![lr]({{ "/assets/img/mpst/lrmodel.jpg" | relative_url}})
-{:.image-caption}
 *Image: Logistic Regression (Tfidf features)*
 
 ##### Training the models:
@@ -170,7 +166,6 @@ NOTE: set class_weight = 'balanced' for models where ever available in libraries
 - Also train the models with Top3 and Top4 tags as Movie databases show mostly 3 or 4 tags with movie.
 
 ![lr]({{ "/assets/img/mpst/lrmodel.jpg" | relative_url}})
-{:.image-caption}
 *Image: Logistic Regression (Mixed Features)*
 
 
