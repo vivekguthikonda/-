@@ -95,6 +95,8 @@ By looking at the plot, we can say that data is very imbalanced.
 
 ![wordcloud]({{ "/assets/img/mpst/wordcloud.png" | relative_url}})
 
+### Text Preprocessing:
+
 ##### Preprocessing the plot_synopses:
 
 - Remove name tags like Dr., Mr., Mrs., Miss, Master, etc.
