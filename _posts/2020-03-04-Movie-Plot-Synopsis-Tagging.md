@@ -169,7 +169,7 @@ NOTE: set class_weight = 'balanced' for models where ever available in libraries
 *Image: Logistic Regression (Mixed Features)*
 
 
-#### Comparing all models:
+### Comparing all models:
 
 ##### On 71 tags:
 
@@ -179,7 +179,7 @@ NOTE: set class_weight = 'balanced' for models where ever available in libraries
 
 ![34tags]({{ "/assets/img/mpst/34tags.jpg" | relative_url}})
 
-#### Future Work:
+### Future Work:
 
 - As future work, we can engineer more features from text and try to increase the micro-f1 score.
 
@@ -187,7 +187,7 @@ NOTE: set class_weight = 'balanced' for models where ever available in libraries
 
 - I have also tested the models with embeddings of the plot_synopsis obtained from pretrained Deep learning models like BERT(786d), Elmo (1024d), etc. but the dimensionality of those vectors is not sufficient to classify this 71 tags tagset. If possible, we can try to optimize those features for more score.
 
-#### Epilogue:
+### Epilogue:
 
 - we have covered many of the Machine learning technique in classifying the text data. 
 
