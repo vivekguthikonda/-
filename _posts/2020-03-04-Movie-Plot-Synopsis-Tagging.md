@@ -102,8 +102,6 @@ By looking at the plot, we can say that data is very imbalanced.
 - Remove name tags like Dr., Mr., Mrs., Miss, Master, etc.
 - Remove stopwords.
 - Remove special characters.
-- Stem all the words using krovetzstemmer.
-
 
 ![pre1]({{ "/assets/img/mpst/preprocessing1.jpg" | relative_url}})
 
@@ -116,6 +114,8 @@ By looking at the plot, we can say that data is very imbalanced.
 
 
 - While preprocessing itself, we find the sentiment features using sentic.SenticPhrase library which include: 14 mood tags features like ['#interest', '#admiration', '#sadness', '#disgust', '#joy', '#anger', '#fear', '#surprise'] and 3 basic sentiments like negative, neutral, positive intensity features from SentimentIntensityAnalyzer in nltk.sentiment.vader library.
+
+- Stem all the words using krovetzstemmer.
 
 ![pre3]({{ "/assets/img/mpst/preprocessing3.jpg" | relative_url}})
 
