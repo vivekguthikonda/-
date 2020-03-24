@@ -198,5 +198,5 @@ My linkedin profile : [here](https://www.linkedin.com/in/vivek-guthikonda-a08074
 
 #### References:
 
-- [www.aclweb.org/anthology/L18-1274](www.aclweb.org/anthology/L18-1274)
-- [www.appliedaicourse.com](www.appliedaicourse.com)
+- www.aclweb.org/anthology/L18-1274
+- www.appliedaicourse.com
