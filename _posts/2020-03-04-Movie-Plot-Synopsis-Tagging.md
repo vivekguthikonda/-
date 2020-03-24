@@ -174,7 +174,7 @@ NOTE: set class_weight = 'balanced' for models where ever available in libraries
 
 - As the text preprocessing plays an important role in getting rich features, we can play with different techniques available in internet to extract more performance from models.
 
-- I have also tested the models with embeddings of the plot_synopsis obtained from pretrained Deep learning models like BERT(786d), Elmo (1024d), etc. but the dimensionality of those vectors is not sufficient to classify this 71 tags tagset. If possible, we can try to optimize to those features for more score.
+- I have also tested the models with embeddings of the plot_synopsis obtained from pretrained Deep learning models like BERT(786d), Elmo (1024d), etc. but the dimensionality of those vectors is not sufficient to classify this 71 tags tagset. If possible, we can try to optimize those features for more score.
 
 #### Epilogue:
 
