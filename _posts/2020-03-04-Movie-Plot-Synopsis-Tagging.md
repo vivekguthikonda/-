@@ -162,7 +162,7 @@ NOTE: set class_weight = 'balanced' for models where ever available in libraries
 - I have tuned the parameters manually so that I can test wide range of parameters by hand.
 - Also train the models with Top3 and Top4 tags as Movie databases show mostly 3 or 4 tags with movie.
 
-![lr]({{ "/assets/img/mpst/lrmodel.jpg" | relative_url}})
+![lr1]({{ "/assets/img/mpst/lr1.jpg" | relative_url}})
 
 
 ### Comparing all models:
