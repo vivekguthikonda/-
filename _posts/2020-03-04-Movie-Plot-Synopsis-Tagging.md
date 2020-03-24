@@ -112,7 +112,6 @@ By looking at the plot, we can say that data is very imbalanced.
 
 ![pre2]({{ "/assets/img/mpst/preprocessing2.jpg" | relative_url}})
 
-
 - While preprocessing itself, we find the sentiment features using sentic.SenticPhrase library which include: 14 mood tags features like ['#interest', '#admiration', '#sadness', '#disgust', '#joy', '#anger', '#fear', '#surprise'] and 3 basic sentiments like negative, neutral, positive intensity features from SentimentIntensityAnalyzer in nltk.sentiment.vader library.
 
 - Stem all the words using krovetzstemmer.
