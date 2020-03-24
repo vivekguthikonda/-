@@ -164,7 +164,6 @@ NOTE: set class_weight = 'balanced' for models where ever available in libraries
 
 ![lr1]({{ "/assets/img/mpst/lr1.jpg" | relative_url}})
 
-
 ### Comparing all models:
 
 ##### On 71 tags:
