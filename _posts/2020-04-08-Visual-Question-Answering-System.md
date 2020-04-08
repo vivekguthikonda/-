@@ -98,7 +98,44 @@ Now using the above vocab, we encode answers. First collect all answers from mul
 
 ![]({{ "/assets/img/vqa/encode_ans.jpg" | relative_url}})
 
-#### Creating pytorch DataLoader:
+#### Creating pytorch Dataset and DataLoader:
+
+To feed the data to pytoch model, we need a dataloader which uses dataset and transforms it to required batch_sized samples.
+Each sample contains image features tensor, encoded question tensor, answer tensor and multi_answer tensor.
+
+###### Dataset:
+![]({{ "/assets/img/vqa/vqa_dataset.jpg" | relative_url}})
+
+###### Dataloader:
+![]({{ "/assets/img/vqa/dataloader.jpg" | relative_url}})
+
+#### Deep Learning Models:
+
+##### DeeperLSTM-Q + norm I(arXiv:1505.00468 [cs.CL]):
+Now we are going to implement the same model from paper in pytorch framework.
+
+![]({{ "/assets/img/vqa/model1.jpg" | relative_url}})
+
+###### Model Definition:
+In this model, we embed question to 300 dim vectors and pass it to fully connected layer. This embeded question is sent to 2 layered LSTM which outputs 512d tensor. The obtained 2 hidden and 2 cell states tensors are concatenated to form 2048 tensor. This question tensor is passed through fullyconnected layer which outputs final question feature tensor. The image features are l2 normalized are passed through another dense layer to get final image features. 
+
+These both question and image features are point wise multiplied and passed through 2 layered MLP with dropout 0.5.
+Lastly we add softmax layer top of them.
+
+Most weights in the model are initialized using he_normal weight initialization.
+
+![]({{ "/assets/img/vqa/model1def.jpg" | relative_url}})
+
+Now, we will initilize model by adding optimizer, onecycle_scheduler.
+- 
+
+
+
+
+
+
+
+
 
 
 
