@@ -49,12 +49,13 @@ v2_OpenEnded_mscoco_val2014_questions.json. Load those json files into json list
 
 ### Exploratory Data Analysis:
 
-Every train sample and val sample has 
-- image_id says about the file name where image is located,
-- question,
-- answer_type like yes/no, number and other,
-- one open end answer,
-- upto 10 multi choice answers.
+
+  Every train sample and val sample has 
+  - image_id says about the file name where image is located,
+  - question,
+  - answer_type like yes/no, number and other,
+  - one open end answer,
+  - upto 10 multi choice answers.
 
 
 
