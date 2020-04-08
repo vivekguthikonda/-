@@ -127,7 +127,35 @@ Most weights in the model are initialized using he_normal weight initialization.
 ![]({{ "/assets/img/vqa/model1def.jpg" | relative_url}})
 
 Now, we will initilize model by adding optimizer, onecycle_scheduler.
-- 
+- NLLLoss is used because we have already used softmax in last layer.
+- Adamax optimizer is used with initial lr = 0.001
+- onecyclic scheduler with max_lr = 0.005 for 20 epochs.
+
+![]({{ "/assets/img/vqa/model1def1.jpg" | relative_url}})
+
+Now, the model is defined, next we will train it.
+
+###### Model training:
+
+In pytorch, for training, we using model.train() to enable training mode. optimizer.zero_grad() must be used before feeding the batch to model. As we have to check answer with multiple answers, here we modify the answer tensor by replacing the wrong output answers with possible multi answers and find loss. After that backpropagate the loss using loss.backward() followed by optimizer.step() and onecycle_scheduler.step().
+
+Model is earlystopped after the loss decrease for 2 epochs.
+![]({{ "/assets/img/vqa/model1def2.jpg" | relative_url}})
+
+###### Plots obtained after training:
+
+![]({{ "/assets/img/vqa/plot1.jpg" | relative_url}})
+
+
+##### DeeperLSTM-Q + norm I with attention(arXiv:1704.03162 [cs.CV]):
+
+
+
+
+
+
+
+
 
 
 
