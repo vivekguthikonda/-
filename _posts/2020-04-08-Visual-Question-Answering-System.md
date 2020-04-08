@@ -226,7 +226,7 @@ Here, we tokenize the question using BertTokenizer and encode it as following:
 
 ![]({{ "/assets/img/vqa/bert1.jpg" | relative_url}})
 
-The Embedding layer with loaded with bert embedding weights as follows:
+The Embedding layer is loaded with bert embedding weights as follows:
 
 ![]({{ "/assets/img/vqa/bert2.jpg" | relative_url}})
 
