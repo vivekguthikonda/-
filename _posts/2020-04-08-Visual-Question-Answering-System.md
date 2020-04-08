@@ -81,8 +81,10 @@ So, first we will extract the image features from pretrained models and store th
 
 ![]({{ "/assets/img/vqa/img_feats1.jpg" | relative_url}})
 1: vgg19_bn image features (4096d from 224x244 image input)
+
 ![]({{ "/assets/img/vqa/img_feats2.jpg" | relative_url}})
-2: wide resnet101_2 image features (1024x14x14d from 224x224 imageinput.
+2: wide resnet101_2 image features (1024x14x14d from 224x224 image input).
+
 ![]({{ "/assets/img/vqa/img_feats3.jpg" | relative_url}})
 3: resnet152 image features (512x14x14d from 448x448 image input)
 
