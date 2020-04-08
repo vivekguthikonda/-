@@ -191,6 +191,49 @@ The paper formulated co-attention mechanism as follow:
 The implementation of mechanism will look like:
 ![]({{ "/assets/img/vqa/model3def3.jpg" | relative_url}})
 
+###### Model Training:
+
+Now, we will initilize model by adding optimizer, onecycle_scheduler.
+- NLLLoss is used because we have already used softmax in last layer.
+- Adamax optimizer is used with initial lr = 0.0003
+- onecyclic scheduler with max_lr = 0.0012 for 50 epochs.
+![]({{ "/assets/img/vqa/model3def4.jpg" | relative_url}})
+
+This model also trained similar to above two models.
+
+###### Plots obtained after training:
+![]({{ "/assets/img/vqa/plot3.jpg" | relative_url}})
+
+
+##### Using Pretrained embeddings for word embeddings(for model 2):
+###### GloVe Embeddings:
+
+We extracted question vocab features from glove.42B.300d model availble online and stored the vectors in pickle and loaded the 
+weights in embedding layer. The question are encoded similar to previous models but with new glove vocab.
+![]({{ "/assets/img/vqa/glove.jpg" | relative_url}})
+
+###### Bert Embeddings:
+
+Here, we tokenize the question using BertTokenizer and encode it as following:
+
+![]({{ "/assets/img/vqa/bert1.jpg" | relative_url}})
+
+The Embedding layer with loaded with bert embedding weights as follows:
+
+![]({{ "/assets/img/vqa/bert2.jpg" | relative_url}})
+
+The extra 2 models are trained using these glove and bert embeddings and results are noted.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
