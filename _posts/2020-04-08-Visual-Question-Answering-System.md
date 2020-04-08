@@ -236,7 +236,27 @@ Lets compare with an image and set of questions:
 #### Metric Comparision:
 ![]({{ "/assets/img/vqa/comp.jpg" | relative_url}})
 
-By seeing vqademo and metric comparision, we can say model2 with glvoe embedding performed better than rest.
+By seeing vqademo and metric comparision, we can say model2 with glove embedding performed better than rest.
+
+### Future Work:
+
+- As future work, Hierarchical co attention model should be trained for more epochs as I found that it is not that much overfitted as other models.
+- There are many complex deep learning models in internet which perform much better than these. So, we can try implementing and tuning them.
+
+### Epilogue:
+
+In this case study, we have trained, tuned and compared different deep learning models based for this visual question answering problem. All models are implemented in pytorch framework. 
+
+The total code and case study is available at my github: [here](https://github.com/vivekguthikonda/VisualQA/blob/master/VQA_notebook.ipynb)
+
+My linkedin profile : [here](https://www.linkedin.com/in/vivek-guthikonda-a08074173?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Buzmi4oz%2BSeaFV8F0MiWfVA%3D%3D)
+
+### References:
+
+- https://arxiv.org/pdf/1505.00468
+- https://arxiv.org/abs/1704.03162
+- https://arxiv.org/abs/1606.00061
+-https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html#sphx-glr-beginner-blitz-cifar10-tutorial-py
 
 
 
