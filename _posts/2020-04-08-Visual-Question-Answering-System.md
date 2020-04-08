@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 
 ![]({{ "/assets/img/vqa/int.jpg" | relative_url}})
