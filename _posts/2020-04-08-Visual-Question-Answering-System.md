@@ -142,9 +142,8 @@ Now, the model is defined, next we will train it.
 
 ##### Model training:
 
-In pytorch, for training, we use model.train() to enable training mode. optimizer.zero_grad() must be used before feeding the batch to model. As we have to check answer with multiple answers, here we modify the answer tensor by replacing the wrong output answers with possible multi answers and find loss. After that backpropagate the loss using loss.backward() followed by optimizer.step() and onecycle_scheduler.step().
+In pytorch, for training, we use model.train() to enable training mode. optimizer.zero_grad() must be used before feeding the batch to model. As we have to check answer with multiple answers, here we modify the answer tensor by replacing the wrong output answers with possible multi answers and find loss. After that backpropagate the loss using loss.backward() followed by optimizer.step() and onecycle_scheduler.step(). Model is earlystopped after the loss decrease for 2 epochs.
 
-Model is earlystopped after the loss decrease for 2 epochs.
 ![]({{ "/assets/img/vqa/model1def2.jpg" | relative_url}})
 
 ##### Plots obtained after training:
