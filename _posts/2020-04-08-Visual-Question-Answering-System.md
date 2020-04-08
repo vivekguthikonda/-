@@ -56,6 +56,23 @@ v2_OpenEnded_mscoco_val2014_questions.json. Load those json files into json list
   - answer_type like yes/no, number and other,
   - one open end answer,
   - upto 10 multi choice answers.
+ 
+  Now, Lets see the distribution of both train and val datasets to find out whether they have same distributions or not.
+ 
+![]({{ "/assets/img/vqa/disbc.jpg" | relative_url}})
+
+The below image has distributions for both train and val sets:
+![]({{ "/assets/img/vqa/disb.jpg" | relative_url}})
+
+By seeing the image, we can say that both train and val sets datasets are very imbalance but they have similar distribution which means we can val set to validate the models.
+
+
+
+
+
+
+  
+  
 
 
 
