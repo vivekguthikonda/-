@@ -257,5 +257,3 @@ My linkedin profile : [here](https://www.linkedin.com/in/vivek-guthikonda-a08074
 - https://arxiv.org/abs/1704.03162
 - https://arxiv.org/abs/1606.00061
 -https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html#sphx-glr-beginner-blitz-cifar10-tutorial-py
-
-
