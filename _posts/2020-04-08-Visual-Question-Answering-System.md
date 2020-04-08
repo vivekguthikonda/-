@@ -190,7 +190,7 @@ The forward function of model will look like:
 ![]({{ "/assets/img/vqa/model3def2.jpg" | relative_url}})
 
 Parallel co-attention:
-The paper formulated co-attention mechanism as follow:
+The paper formulated the co-attention mechanism as follow:
 ![]({{ "/assets/img/vqa/model3form.jpg" | relative_url}})
 The implementation of mechanism will look like:
 ![]({{ "/assets/img/vqa/model3def3.jpg" | relative_url}})
