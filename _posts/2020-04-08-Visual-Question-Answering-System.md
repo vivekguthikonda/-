@@ -190,7 +190,7 @@ First for embedding question, we will get unigrams, bigrams, traigrams using res
 Now, We will define layers as per the paper.
 ![]({{ "/assets/img/vqa/model3def1.jpg" | relative_url}})
 
-The forward function of model will look:
+The forward function of model will look like:
 ![]({{ "/assets/img/vqa/model3def2.jpg" | relative_url}})
 
 Parallel co-attention:
