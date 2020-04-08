@@ -4,6 +4,8 @@ published: false
 
 ![]({{ "/assets/img/vqa/int.jpg" | relative_url}})
 
+In this case study, we will compare various deep learning models which perform visual question answering.
+
 ### Introduction:
 
 VQA is a task of free-form and open-ended Visual Question Answering (VQA). Given an image and a natural language question about the image, the task is to provide an accurate natural language answer. Mirroring real-world scenarios, such as helping the visually impaired, both the questions and answers are open-ended. Visual questions selectively target different areas of an image, including background details and underlying context. As a result, a system that succeeds at VQA typically needs a more detailed understanding of the image and complex reasoning than a system producing generic image captions. 
@@ -65,6 +67,70 @@ The below image has distributions for both train and val sets:
 ![]({{ "/assets/img/vqa/disb.jpg" | relative_url}})
 
 By seeing the image, we can say that both train and val sets datasets are very imbalance but they have similar distribution which means we can val set to validate the models.
+
+Now lets see maximum words that a question has:
+![]({{ "/assets/img/vqa/length.jpg" | relative_url}})
+
+Since the maximum words in question are 22, we will take max length of 25 words for every question.
+
+### Data Preparation:
+
+#### Image Features:
+In this case study, we are going to compare three architectures from research papers arXiv:1505.00468 [cs.CL] , arXiv:1704.03162 [cs.CV], arXiv:1606.00061 [cs.CV].
+So, first we will extract the image features from pretrained models and store them in .h5 files for easy retrieval while training models.
+![]({{ "/assets/img/vqa/img_feats.jpg" | relative_url}})
+
+#### Questions:
+
+Now we encode questions. Create question vocab by collecting unique words and sorting them in alphabetical order. Also \<PAD\> and \<UNK\> tokens for padding and unknown words. 
+
+![]({{ "/assets/img/vqa/create_vocab.jpg" | relative_url}})
+
+For each question, convert word to id using vocab dict. if the length is below 25, then add padding else trim it.
+![]({{ "/assets/img/vqa/encode_qs.jpg" | relative_url}})
+
+#### Answers:
+
+Similarly for answers also, we create answer_vocab by using only 1000 top answers.  
+![]({{ "/assets/img/vqa/create_ans_v.jpg" | relative_url}})
+
+Now using the above vocab, we encode answers. First collect all answers from multiple answers and set on them, if a answer is not present in vocab, then replace it with \<UNK\>. For pytorch dataloader the all inputs should have same dimensions. So we will pad multi answers with -11 for remaining out of 10 answers.
+
+![]({{ "/assets/img/vqa/encode_ans.jpg" | relative_url}})
+
+#### Creating pytorch DataLoader:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
