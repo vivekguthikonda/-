@@ -122,7 +122,7 @@ In this model, we embed question to 300 dim vectors and pass it to fully connect
 These both question and image features are point wise multiplied and passed through 2 layered MLP with dropout 0.5.
 Lastly we add softmax layer top of them.
 
-Most weights in the model are initialized using he_normal weight initialization.
+Most weights in the model are initialized using he_normal weight initialization. GELU is used as activation function because its known to work well with NLP problems.
 
 ![]({{ "/assets/img/vqa/model1def.jpg" | relative_url}})
 
@@ -137,7 +137,7 @@ Now, the model is defined, next we will train it.
 
 ###### Model training:
 
-In pytorch, for training, we using model.train() to enable training mode. optimizer.zero_grad() must be used before feeding the batch to model. As we have to check answer with multiple answers, here we modify the answer tensor by replacing the wrong output answers with possible multi answers and find loss. After that backpropagate the loss using loss.backward() followed by optimizer.step() and onecycle_scheduler.step().
+In pytorch, for training, we use model.train() to enable training mode. optimizer.zero_grad() must be used before feeding the batch to model. As we have to check answer with multiple answers, here we modify the answer tensor by replacing the wrong output answers with possible multi answers and find loss. After that backpropagate the loss using loss.backward() followed by optimizer.step() and onecycle_scheduler.step().
 
 Model is earlystopped after the loss decrease for 2 epochs.
 ![]({{ "/assets/img/vqa/model1def2.jpg" | relative_url}})
@@ -148,6 +148,66 @@ Model is earlystopped after the loss decrease for 2 epochs.
 
 
 ##### DeeperLSTM-Q + norm I with attention(arXiv:1704.03162 [cs.CV]):
+
+We will add attention mechanism from paper to the above model.
+
+![]({{ "/assets/img/vqa/att.jpg" | relative_url}})
+
+###### Model Definition:
+In this model, we embed question to 512 dim vectors and pass it to fully connected layer. This embeded question is sent to 2 layered LSTM which outputs 1024d tensor.  The obtained last cell state tensor of 1024d is passed to a dense layer to  get final question feature. That question feature is attended to image feature of dimension 1024 x 14 x 14. The obtained weighted image is concatenated with question feature and passed through 2 layered MLP with softmax layer at last.
+
+![]({{ "/assets/img/vqa/model2def1.jpg" | relative_url}})
+
+###### Attention definition:
+
+Here in attention, we pass 1024x14x14 image feature to 1x1 kernel sized conv2d layer which outputs 1024x14x14. Question feature is expanded as 1024d to 1024x14x14 repeating in all spatial dimensions similar to image features. Now, we will add both obtained image and question features. This added feature sent to glimpse convolution layer which looks those features for 2 glimpses and outputs 2x14x14 feature tensor which is our attention tensor. Now, we will multiply this attention tensor with image features for 2 glimpses. The obtained tensor is averaged across 14x14 and finally we will get 2048d tensor.
+
+![]({{ "/assets/img/vqa/model2def2.jpg" | relative_url}})
+
+###### Model training:
+Similarly to model1, we also train this model.
+
+###### Plots obtained after training:
+![]({{ "/assets/img/vqa/plot2.jpg" | relative_url}})
+
+##### Hierarchical Question Image Co-Attention Model(arXiv:1606.00061 [cs.CV]):
+
+Here, we will implement the hierarchical co attention model from paper[here](https://arxiv.org/pdf/1606.00061).
+![]({{ "/assets/img/vqa/model3.jpg" | relative_url}})
+
+###### Model Definition:
+
+First for embedding question, we will get unigrams, bigrams, traigrams using respective convolution layers and maxpool them. This maxpooled feature is passed to 3 layered LSTM. 
+
+Now, We will define layers as per the paper.
+![]({{ "/assets/img/vqa/model3def1.jpg" | relative_url}})
+
+The forward function of model will look:
+![]({{ "/assets/img/vqa/model3def2.jpg" | relative_url}})
+
+Parallel co-attention:
+The paper formulated co-attention mechanism as follow:
+![]({{ "/assets/img/vqa/model3form.jpg" | relative_url}})
+The implementation of mechanism will look like:
+![]({{ "/assets/img/vqa/model3def3.jpg" | relative_url}})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
