@@ -104,7 +104,7 @@ To feed the data to pytoch model, we need a dataloader which uses dataset and tr
 Each sample contains image features tensor, encoded question tensor, answer tensor and multi_answer tensor.
 
 ###### Dataset:
-![]({{ "/assets/img/vqa/vqa_dataset.jpg" | relative_url}})
+![]({{ "/assets/img/vqa/vqadataset.jpg" | relative_url}})
 
 ###### Dataloader:
 ![]({{ "/assets/img/vqa/dataloader.jpg" | relative_url}})
