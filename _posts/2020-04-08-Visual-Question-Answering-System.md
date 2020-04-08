@@ -109,7 +109,7 @@ Each sample contains image features tensor, encoded question tensor, answer tens
 ###### Dataloader:
 ![]({{ "/assets/img/vqa/dataloader.jpg" | relative_url}})
 
-#### Deep Learning Models:
+### Deep Learning Models:
 
 ##### DeeperLSTM-Q + norm I(arXiv:1505.00468 [cs.CL]):
 Now we are going to implement the same model from paper in pytorch framework.
@@ -205,7 +205,7 @@ This model also trained similar to above two models.
 ![]({{ "/assets/img/vqa/plot3.jpg" | relative_url}})
 
 
-##### Using Pretrained embeddings for word embeddings(for model 2):
+#### Using Pretrained embeddings for word embeddings(for model 2):
 ###### GloVe Embeddings:
 
 We extracted question vocab features from glove.42B.300d model availble online and stored the vectors in pickle and loaded the 
@@ -223,6 +223,31 @@ The Embedding layer with loaded with bert embedding weights as follows:
 ![]({{ "/assets/img/vqa/bert2.jpg" | relative_url}})
 
 The extra 2 models are trained using these glove and bert embeddings and results are noted.
+
+### Comparing All Models:
+
+#### VQADemo:
+Lets compare with an image and set of questions:
+###### Image:
+![]({{ "/assets/img/vqa/demo_img.jpg" | relative_url}})
+###### Question:
+![]({{ "/assets/img/vqa/demo.jpg" | relative_url}})
+
+#### Metric Comparision:
+![]({{ "/assets/img/vqa/comp.jpg" | relative_url}})
+
+By seeing vqademo and metric comparision, we can say model2 with glvoe embedding performed better than rest.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
